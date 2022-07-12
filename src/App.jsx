@@ -1,4 +1,4 @@
-import {mainHeatArray, mainWetBulbArray} from "./ClimateData";
+import {mainHeatArray, mainWetBulbArray, mainCropYieldArray, mainSeaLevelRiseArray, mainFireArray} from "./ClimateData";
 
 
 import React, { useRef, useEffect, useState } from "react";
@@ -97,7 +97,27 @@ export default function App() {
       //   );
       // });
 
-      mainWetBulbArray.map((state, index) => {
+      // mainWetBulbArray.map((state, index) => {
+      //   return map.current.addLayer(
+      //     {
+      //       id: stateAbbrvArray[index],
+      //       type: "fill",
+      //       "source-layer": "albersusa",
+      //       source: "composite",
+      //       filter: ["in", ["get", "state_abbrev"], stateAbbrvArray[index]],
+      //       paint: {
+      //         "fill-color": [
+      //           "match",
+      //           ["get", "county_name"],
+      //           ...mainWetBulbArray[index],
+      //         ],
+      //       },
+      //     },
+      //     "county-points",
+      //     "county-boundaries"
+      //   );
+      // });
+      mainCropYieldArray.map((state, index) => {
         return map.current.addLayer(
           {
             id: stateAbbrvArray[index],
@@ -109,7 +129,7 @@ export default function App() {
               "fill-color": [
                 "match",
                 ["get", "county_name"],
-                ...mainWetBulbArray[index],
+                ...mainCropYieldArray[index],
               ],
             },
           },
