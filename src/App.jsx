@@ -1,4 +1,5 @@
-import mainHeatArray from "./Climate Data";
+import {mainHeatArray, mainWetBulbArray} from "./ClimateData";
+
 
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
@@ -67,7 +68,7 @@ export default function App() {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/jkerr772/cl5el3gr3000014qeyg7hgjk3",
+      style: "mapbox://styles/jkerr772/cl5fi0zwz000214p39rnnx0vt",
       center: [lng, lat],
       zoom: zoom,
       minZoom: 4,
@@ -75,7 +76,28 @@ export default function App() {
     });
 
     map.current.on("load", () => {
-      mainHeatArray.map((state, index) => {
+      // mainHeatArray.map((state, index) => {
+      //   return map.current.addLayer(
+      //     {
+      //       id: stateAbbrvArray[index],
+      //       type: "fill",
+      //       "source-layer": "albersusa",
+      //       source: "composite",
+      //       filter: ["in", ["get", "state_abbrev"], stateAbbrvArray[index]],
+      //       paint: {
+      //         "fill-color": [
+      //           "match",
+      //           ["get", "county_name"],
+      //           ...mainHeatArray[index],
+      //         ],
+      //       },
+      //     },
+      //     "county-points",
+      //     "county-boundaries"
+      //   );
+      // });
+
+      mainWetBulbArray.map((state, index) => {
         return map.current.addLayer(
           {
             id: stateAbbrvArray[index],
@@ -87,7 +109,7 @@ export default function App() {
               "fill-color": [
                 "match",
                 ["get", "county_name"],
-                ...mainHeatArray[index],
+                ...mainWetBulbArray[index],
               ],
             },
           },
@@ -103,14 +125,37 @@ export default function App() {
           "source-layer": "albersusa",
           source: "composite",
           // filter: ["!=", "HI", "state_abbrev"],
-          visibility: ["match", ["get", ...stateAbbrvArray], "HI", "none", "AK", "none", "none"],
+          visibility: [
+            "match",
+            ["get", "state_name"],
+            "Hawaii",
+            "none",
+            "none",
+          ],
           paint: {
-            "line-width": 0.5,
+            "line-width": [
+              "match",
+              ["get", "state_name"],
+              "Hawaii",
+              0,
+              "Alaska",
+              0,
+              "Puerto Rico",
+              0,
+              0.5,
+            ],
+            "line-blur": 2,
           },
         },
 
         "state-points"
       );
+      map.current.addSource({
+        id: "cities",
+        type: "symbol",
+        source: "jkerr772.cl5fk7b3z1js520kt1vmo78qp-2pbtg",
+      });
+      // add markers to map
     });
   });
 
@@ -128,6 +173,7 @@ export default function App() {
       <div className="sidebar">
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
+
       <div ref={mapContainer} className="map-container" />
     </div>
   );
