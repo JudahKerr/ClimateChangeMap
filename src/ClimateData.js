@@ -6240,16 +6240,16 @@ let finalData = counties.map((county, index) => {
 
 //////////////// COLORS //////////////////
 const heatColorArray = [
-  "#ffcc99",
-  "#ffad7a",
-  "#ff9966",
-  "#ff751f",
-  "#ff5c00",
-  "#ff3300",
-  "#ff1400",
-  "#cc0000",
-  "#8d0000",
-  "#990033",
+  "#ffffff",
+  "#f7d9d9",
+  "#f0b2b2",
+  "#e88c8c",
+  "#e06666",
+  "#d94040",
+  "#d11919",
+  "#bd0008",
+  "#a80012",
+  "#94001c",
 ];
 
 const wetBulbColorArray = [
@@ -6280,30 +6280,42 @@ const cropYieldColorArray = [
 
 const seaLevelRiseColorArray = [
   "#FFFFFF",
-  "#d9f0e0",
-  "#b2e0c2",
-  "#8cd1a3",
-  "#66c285",
-  "#40b266",
-  "#19a347",
-  "#009933",
-  "#008529",
-  "#00701f",
+  "#e6ebf0",
+  "#ccd6e0",
+  "#b2c2d1",
+  "#99adc2",
+  "#8099b2",
+  "#6685a3",
+  "#4d7094",
+  "#26527d",
+  "#003366",
 ];
 
 const fireColorArray = [
-  "#FFFFFF",
-  "#d9f0e0",
-  "#b2e0c2",
-  "#8cd1a3",
-  "#66c285",
-  "#40b266",
-  "#19a347",
-  "#009933",
-  "#008529",
-  "#00701f",
+  "#ffcc99",
+  "#ffad7a",
+  "#ff9966",
+  "#ff751f",
+  "#ff5c00",
+  "#ff3300",
+  "#ff1400",
+  "#cc0000",
+  "#8d0000",
+  "#990033",
 ];
 
+const economicDamageColorArray = [
+  "#ffffff",
+  "#f0e8ff",
+  "#e0d1ff",
+  "#d1baff",
+  "#c2a3ff",
+  "#b28cff",
+  "#a375ff",
+  "#9966ff",
+  "#8033e6",
+  "#6600cc",
+];
 
 
 
@@ -6500,36 +6512,68 @@ finalData.map((item) => {
         alabamaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        alabamaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        alabamaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        alabamaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -6662,36 +6706,68 @@ finalData.map((item) => {
         arizonaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        arizonaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        arizonaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        arizonaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -6824,36 +6900,68 @@ finalData.map((item) => {
         arkansasArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        arkansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        arkansasArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        arkansasArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -6986,36 +7094,68 @@ finalData.map((item) => {
         californiaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        californiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        californiaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        californiaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -7148,36 +7288,68 @@ finalData.map((item) => {
         coloradoArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        coloradoArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        coloradoArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        coloradoArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -7310,36 +7482,68 @@ finalData.map((item) => {
         connecticutArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        connecticutArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        connecticutArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        connecticutArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -7472,36 +7676,68 @@ finalData.map((item) => {
         delawareArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        delawareArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        delawareArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        delawareArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
  
@@ -7634,36 +7870,68 @@ finalData.map((item) => {
         floridaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        floridaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        floridaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        floridaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -7796,36 +8064,68 @@ finalData.map((item) => {
         georgiaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        georgiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        georgiaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        georgiaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -7958,36 +8258,68 @@ finalData.map((item) => {
         idahoArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        idahoArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        idahoArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        idahoArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -8120,36 +8452,68 @@ finalData.map((item) => {
         illinoisArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        illinoisArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        illinoisArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        illinoisArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
  
@@ -8282,36 +8646,68 @@ finalData.map((item) => {
         indianaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        indianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        indianaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        indianaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -8444,36 +8840,68 @@ finalData.map((item) => {
         iowaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        iowaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        iowaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        iowaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -8606,36 +9034,68 @@ finalData.map((item) => {
         kansasArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        kansasArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        kansasArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        kansasArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -8768,36 +9228,68 @@ finalData.map((item) => {
         kentuckyArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        kentuckyArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        kentuckyArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        kentuckyArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -8930,36 +9422,68 @@ finalData.map((item) => {
         louisianaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        louisianaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        louisianaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        louisianaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -9092,36 +9616,68 @@ finalData.map((item) => {
         maineArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        maineArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        maineArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        maineArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        maineArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        maineArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        maineArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        maineArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        maineArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        maineArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        maineArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        maineArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        maineArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -9254,36 +9810,68 @@ finalData.map((item) => {
         marylandArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        marylandArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        marylandArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        marylandArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -9416,36 +10004,68 @@ finalData.map((item) => {
         massachusettsArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        massachusettsArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        massachusettsArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        massachusettsArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -9578,36 +10198,68 @@ finalData.map((item) => {
         michiganArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        michiganArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        michiganArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        michiganArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -9740,36 +10392,68 @@ finalData.map((item) => {
         minnesotaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        minnesotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        minnesotaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        minnesotaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -9902,36 +10586,68 @@ finalData.map((item) => {
         mississippiArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        mississippiArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        mississippiArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        mississippiArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -10064,36 +10780,68 @@ finalData.map((item) => {
         missouriArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        missouriArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        missouriArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        missouriArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -10226,36 +10974,68 @@ finalData.map((item) => {
         montanaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        montanaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        montanaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        montanaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -10388,36 +11168,68 @@ finalData.map((item) => {
         nebraskaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        nebraskaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        nebraskaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        nebraskaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -10550,36 +11362,68 @@ finalData.map((item) => {
         nevadaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        nevadaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        nevadaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        nevadaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -10712,36 +11556,68 @@ finalData.map((item) => {
         newHampshireArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        newHampshireArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        newHampshireArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        newHampshireArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -10874,36 +11750,68 @@ finalData.map((item) => {
         newJerseyArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        newJerseyArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        newJerseyArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        newJerseyArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -11036,36 +11944,68 @@ finalData.map((item) => {
         newMexicoArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        newMexicoArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        newMexicoArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        newMexicoArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -11198,36 +12138,68 @@ finalData.map((item) => {
         newYorkArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        newYorkArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        newYorkArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        newYorkArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -11360,36 +12332,68 @@ finalData.map((item) => {
         northCarolinaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        northCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        northCarolinaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        northCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -11522,36 +12526,68 @@ finalData.map((item) => {
         northDakotaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        northDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        northDakotaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        northDakotaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -11684,36 +12720,68 @@ finalData.map((item) => {
         ohioArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        ohioArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        ohioArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        ohioArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -11846,36 +12914,68 @@ finalData.map((item) => {
         oklahomaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        oklahomaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        oklahomaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        oklahomaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -12008,36 +13108,68 @@ finalData.map((item) => {
         oregonArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        oregonArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        oregonArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        oregonArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -12170,36 +13302,68 @@ finalData.map((item) => {
         pennsylvaniaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        pennsylvaniaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        pennsylvaniaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        pennsylvaniaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -12332,36 +13496,68 @@ finalData.map((item) => {
         rhodeIslandArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        rhodeIslandArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        rhodeIslandArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        rhodeIslandArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -12494,36 +13690,68 @@ finalData.map((item) => {
         southCarolinaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        southCarolinaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        southCarolinaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        southCarolinaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -12656,36 +13884,68 @@ finalData.map((item) => {
         southDakotaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        southDakotaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        southDakotaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        southDakotaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
    
@@ -12818,36 +14078,68 @@ finalData.map((item) => {
         tennesseeArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        tennesseeArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        tennesseeArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        tennesseeArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -12980,36 +14272,68 @@ finalData.map((item) => {
         texasArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        texasArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        texasArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        texasArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        texasArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        texasArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        texasArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        texasArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        texasArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        texasArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        texasArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        texasArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        texasArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -13142,36 +14466,68 @@ finalData.map((item) => {
         utahArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        utahArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        utahArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        utahArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        utahArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        utahArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        utahArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        utahArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        utahArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        utahArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        utahArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        utahArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        utahArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -13304,36 +14660,68 @@ finalData.map((item) => {
         vermontArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        vermontArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        vermontArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        vermontArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -13466,36 +14854,68 @@ finalData.map((item) => {
         virginiaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        virginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        virginiaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        virginiaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -13628,36 +15048,68 @@ finalData.map((item) => {
         washingtonArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        washingtonArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        washingtonArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        washingtonArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -13790,36 +15242,68 @@ finalData.map((item) => {
         westVirginiaArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        westVirginiaArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        westVirginiaArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        westVirginiaArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -13952,36 +15436,68 @@ finalData.map((item) => {
         wisconsinArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        wisconsinArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        wisconsinArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        wisconsinArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -14114,36 +15630,68 @@ finalData.map((item) => {
         wyomingArray[3].push(item.county.trim(), seaLevelRiseColorArray[9]);
         break;
     }
-    switch (item.data.seaLevelRise) {
+    switch (item.data.fire) {
       case "1":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[0]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[0]);
         break;
       case "2":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[1]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[1]);
         break;
       case "3":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[2]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[2]);
         break;
       case "4":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[3]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[3]);
         break;
       case "5":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[4]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[4]);
         break;
       case "6":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[5]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[5]);
         break;
       case "7":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[6]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[6]);
         break;
       case "8":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[7]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[7]);
         break;
       case "9":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[8]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[8]);
         break;
       case "10":
-        wyomingArray[4].push(item.county.trim(), seaLevelRiseColorArray[9]);
+        wyomingArray[4].push(item.county.trim(), fireColorArray[9]);
+        break;
+    }
+    switch (item.data.economicDamage) {
+      case "1":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[0]);
+        break;
+      case "2":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[1]);
+        break;
+      case "3":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[2]);
+        break;
+      case "4":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[3]);
+        break;
+      case "5":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[4]);
+        break;
+      case "6":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[5]);
+        break;
+      case "7":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[6]);
+        break;
+      case "8":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[7]);
+        break;
+      case "9":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[8]);
+        break;
+      case "10":
+        wyomingArray[5].push(item.county.trim(), economicDamageColorArray[9]);
         break;
     }
     
@@ -14205,7 +15753,6 @@ mainHeatArray.push(
   wisconsinArray[0],
   wyomingArray[0]
 );
-
 mainWetBulbArray.push(
   alabamaArray[1],
   arizonaArray[1],
@@ -14256,7 +15803,6 @@ mainWetBulbArray.push(
   wisconsinArray[1],
   wyomingArray[1]
 );
-
 mainCropYieldArray.push(
   alabamaArray[2],
   arizonaArray[2],
@@ -14357,7 +15903,6 @@ mainSeaLevelRiseArray.push(
   wisconsinArray[3],
   wyomingArray[3]
 );
-
 mainFireArray.push(
   alabamaArray[4],
   arizonaArray[4],
@@ -14408,6 +15953,56 @@ mainFireArray.push(
   wisconsinArray[4],
   wyomingArray[4]
 );
+mainEconomicDamageArray.push(
+  alabamaArray[5],
+  arizonaArray[5],
+  arkansasArray[5],
+  californiaArray[5],
+  coloradoArray[5],
+  connecticutArray[5],
+  delawareArray[5],
+  floridaArray[5],
+  georgiaArray[5],
+  idahoArray[5],
+  illinoisArray[5],
+  indianaArray[5],
+  iowaArray[5],
+  kansasArray[5],
+  kentuckyArray[5],
+  louisianaArray[5],
+  maineArray[5],
+  marylandArray[5],
+  massachusettsArray[5],
+  michiganArray[5],
+  minnesotaArray[5],
+  mississippiArray[5],
+  missouriArray[5],
+  montanaArray[5],
+  nebraskaArray[5],
+  nevadaArray[5],
+  newHampshireArray[5],
+  newJerseyArray[5],
+  newMexicoArray[5],
+  newYorkArray[5],
+  northCarolinaArray[5],
+  northDakotaArray[5],
+  ohioArray[5],
+  oklahomaArray[5],
+  oregonArray[5],
+  pennsylvaniaArray[5],
+  rhodeIslandArray[5],
+  southCarolinaArray[5],
+  southDakotaArray[5],
+  tennesseeArray[5],
+  texasArray[5],
+  utahArray[5],
+  vermontArray[5],
+  virginiaArray[5],
+  washingtonArray[5],
+  westVirginiaArray[5],
+  wisconsinArray[5],
+  wyomingArray[5]
+);
 
 /////////// TRANSPARENT PUSH ////////////
 JSON.stringify(mainHeatArray);
@@ -14415,6 +16010,7 @@ JSON.stringify(mainWetBulbArray);
 JSON.stringify(mainCropYieldArray);
 JSON.stringify(mainSeaLevelRiseArray);
 JSON.stringify(mainFireArray);
+JSON.stringify(mainEconomicDamageArray);
 
 
 
@@ -14439,8 +16035,13 @@ mainFireArray.forEach((item) => {
   
 })
 
+mainEconomicDamageArray.forEach((item) => {
+  item.push("transparent");
+  
+})
 
-export {mainHeatArray, mainWetBulbArray, mainCropYieldArray, mainSeaLevelRiseArray, mainFireArray};
+
+export {mainHeatArray, mainWetBulbArray, mainCropYieldArray, mainSeaLevelRiseArray, mainFireArray, mainEconomicDamageArray};
 
 // coloradoArray.push("transparent");
 
