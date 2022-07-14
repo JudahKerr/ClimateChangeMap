@@ -5,6 +5,7 @@ import {
   mainSeaLevelRiseArray,
   mainFireArray,
   mainEconomicDamageArray,
+  finalData,
 } from "./ClimateData";
 
 import React, { useRef, useEffect, useState } from "react";
@@ -19,7 +20,19 @@ export default function App() {
   const [lat, setLat] = useState(0);
   const [zoom, setZoom] = useState(4.5);
   const [layer, setLayer] = useState(0);
-
+  const [name, setName] = useState("Heat");
+  const [hover, setHover] = useState(false);
+  const [hoverData, setHoverData] = useState({
+    name: "",
+    state: "",
+    heat: "",
+    wetBulb: "",
+    cropYield: "",
+    seaLevelRise: "",
+    fire: "",
+    economicDamage: "",
+  });
+  // console.log(finalData);
   const stateAbbrvArray = [
     "AL",
     "AZ",
@@ -82,32 +95,8 @@ export default function App() {
       maxZoom: 9,
     });
 
-    const popup = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false
-      });
-
-
     map.current.on("load", () => {
       mainHeatArray.map((state, index) => {
-        map.current.on("mouseenter", stateAbbrvArray[index], (e) => {
-          map.getCanvas().style.cursor = "pointer";
-
-          // Copy coordinates array.
-          const coordinates = e.features[0].geometry.coordinates.slice();
-          const description = e.features[0].properties.description;
-
-          // Ensure that if the map is zoomed out such that multiple
-          // copies of the feature are visible, the popup appears
-          // over the copy being pointed to.
-          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-          }
-
-          // Populate the popup and set its coordinates
-          // based on the feature found.
-          popup.setLngLat(coordinates).setHTML(description).addTo(map);
-        });
         return map.current.addLayer(
           {
             id: stateAbbrvArray[index],
@@ -128,12 +117,37 @@ export default function App() {
         );
       });
 
-      //   if (layer === 2) {
-      //     console.log("2")
-      //     map.current.eachLayer(function (layer) {
-      //       map.current.removeLayer(layer)
-      //   });
-      // }
+      mainHeatArray.map((state, index) => {
+        return map.current.on("mousemove", stateAbbrvArray[index], (e) => {
+          setHover(true);
+          const features = map.current.queryRenderedFeatures(e.point);
+          let heatData = finalData.map((element, index) => {
+            if (
+              features[0].properties.county_name === element.county &&
+              features[0].properties.state_abbrev === element.state
+            ) {
+              return element.data.heat;
+            }
+          });
+
+          console.log(features);
+          if (features.length > 0) {
+            if (typeof features[0].properties.county_name !== "undefined") {
+              setHoverData({
+                name: features[0].properties.county_name,
+                state: features[0].properties.state_abbrev,
+                heat: heatData,
+              });
+            }
+          }
+        });
+      });
+
+      mainHeatArray.map((state, index) => {
+        return map.current.on("mouseleave", stateAbbrvArray[index], (e) => {
+          setHover(false);
+        });
+      });
 
       map.current.addLayer(
         {
@@ -141,7 +155,6 @@ export default function App() {
           type: "line",
           "source-layer": "albersusa",
           source: "composite",
-          // filter: ["!=", "HI", "state_abbrev"],
           visibility: [
             "match",
             ["get", "state_name"],
@@ -172,44 +185,13 @@ export default function App() {
         type: "symbol",
         source: "jkerr772.cl5fk7b3z1js520kt1vmo78qp-2pbtg",
       });
-      // add markers to map
     });
-
-    // map.current.on('idle', () => {
-    //   if (layer === 2) {
-    //     console.log("2");
-    //     mainHeatArray.map((state, index) => {
-    //       map.removeLayer(stateAbbrvArray[index]);
-    //       map.removeSource("composite")
-    //     })
-    //     // mainWetBulbArray.map((state, index) => {
-    //     //   return map.current.addLayer(
-    //     //     {
-    //     //       id: stateAbbrvArray[index],
-    //     //       type: "fill",
-    //     //       "source-layer": "albersusa",
-    //     //       source: "composite",
-    //     //       filter: ["in", ["get", "state_abbrev"], stateAbbrvArray[index]],
-    //     //       paint: {
-    //     //         "fill-color": [
-    //     //           "match",
-    //     //           ["get", "county_name"],
-    //     //           ...mainWetBulbArray[index],
-    //     //         ],
-    //     //       },
-    //     //     },
-    //     //     "county-points",
-    //     //     "county-boundaries"
-    //     //   );
-    //     // });
-    //   }
-
-    //  })
   });
 
   useEffect(() => {
     switch (layer) {
       case 1:
+        setName("Heat");
         console.log("1");
         mainHeatArray.map((state, index) => {
           if (map.current.getLayer(stateAbbrvArray[index])) {
@@ -236,10 +218,35 @@ export default function App() {
             "county-boundaries"
           );
         });
+        mainHeatArray.map((state, index) => {
+          return map.current.on("mousemove", stateAbbrvArray[index], (e) => {
+            const features = map.current.queryRenderedFeatures(e.point);
+            let heatData = finalData.map((element, index) => {
+              if (
+                features[0].properties.county_name === element.county &&
+                features[0].properties.state_abbrev === element.state
+              ) {
+                return element.data.heat;
+              }
+            });
+
+            console.log(features);
+            if (features.length > 0) {
+              if (typeof features[0].properties.county_name !== "undefined") {
+                setHoverData({
+                  name: features[0].properties.county_name,
+                  state: features[0].properties.state_abbrev,
+                  heat: heatData,
+                });
+              }
+            }
+          });
+        });
 
         break;
 
       case 2:
+        setName("Wet Bulb");
         console.log("2");
         mainHeatArray.map((state, index) => {
           if (map.current.getLayer(stateAbbrvArray[index])) {
@@ -266,9 +273,34 @@ export default function App() {
             "county-boundaries"
           );
         });
+        mainWetBulbArray.map((state, index) => {
+          return map.current.on("mousemove", stateAbbrvArray[index], (e) => {
+            const features = map.current.queryRenderedFeatures(e.point);
+            let wetBulbData = finalData.map((element, index) => {
+              if (
+                features[0].properties.county_name === element.county &&
+                features[0].properties.state_abbrev === element.state
+              ) {
+                return element.data.wetBulb;
+              }
+            });
+
+            console.log(features);
+            if (features.length > 0) {
+              if (typeof features[0].properties.county_name !== "undefined") {
+                setHoverData({
+                  name: features[0].properties.county_name,
+                  state: features[0].properties.state_abbrev,
+                  heat: wetBulbData,
+                });
+              }
+            }
+          });
+        });
         break;
 
       case 3:
+        setName("Crop Yield Decline");
         console.log("3");
         mainHeatArray.map((state, index) => {
           if (map.current.getLayer(stateAbbrvArray[index])) {
@@ -295,8 +327,33 @@ export default function App() {
             "county-boundaries"
           );
         });
+        mainCropYieldArray.map((state, index) => {
+          return map.current.on("mousemove", stateAbbrvArray[index], (e) => {
+            const features = map.current.queryRenderedFeatures(e.point);
+            let cropYieldData = finalData.map((element, index) => {
+              if (
+                features[0].properties.county_name === element.county &&
+                features[0].properties.state_abbrev === element.state
+              ) {
+                return element.data.cropYield;
+              }
+            });
+
+            console.log(features);
+            if (features.length > 0) {
+              if (typeof features[0].properties.county_name !== "undefined") {
+                setHoverData({
+                  name: features[0].properties.county_name,
+                  state: features[0].properties.state_abbrev,
+                  heat: cropYieldData,
+                });
+              }
+            }
+          });
+        });
         break;
       case 4:
+        setName("Sea Level Rise");
         console.log("4");
         mainHeatArray.map((state, index) => {
           if (map.current.getLayer(stateAbbrvArray[index])) {
@@ -323,8 +380,33 @@ export default function App() {
             "county-boundaries"
           );
         });
+        mainSeaLevelRiseArray.map((state, index) => {
+          return map.current.on("mousemove", stateAbbrvArray[index], (e) => {
+            const features = map.current.queryRenderedFeatures(e.point);
+            let seaLevelRiseData = finalData.map((element, index) => {
+              if (
+                features[0].properties.county_name === element.county &&
+                features[0].properties.state_abbrev === element.state
+              ) {
+                return element.data.seaLevelRise;
+              }
+            });
+
+            console.log(features);
+            if (features.length > 0) {
+              if (typeof features[0].properties.county_name !== "undefined") {
+                setHoverData({
+                  name: features[0].properties.county_name,
+                  state: features[0].properties.state_abbrev,
+                  heat: seaLevelRiseData,
+                });
+              }
+            }
+          });
+        });
         break;
       case 5:
+        setName("Very Large Fires");
         console.log("5");
         mainHeatArray.map((state, index) => {
           if (map.current.getLayer(stateAbbrvArray[index])) {
@@ -351,8 +433,33 @@ export default function App() {
             "county-boundaries"
           );
         });
+        mainFireArray.map((state, index) => {
+          return map.current.on("mousemove", stateAbbrvArray[index], (e) => {
+            const features = map.current.queryRenderedFeatures(e.point);
+            let fireData = finalData.map((element, index) => {
+              if (
+                features[0].properties.county_name === element.county &&
+                features[0].properties.state_abbrev === element.state
+              ) {
+                return element.data.fire;
+              }
+            });
+
+            console.log(features);
+            if (features.length > 0) {
+              if (typeof features[0].properties.county_name !== "undefined") {
+                setHoverData({
+                  name: features[0].properties.county_name,
+                  state: features[0].properties.state_abbrev,
+                  heat: fireData,
+                });
+              }
+            }
+          });
+        });
         break;
       case 6:
+        setName("Economic Damage");
         console.log("6");
         mainHeatArray.map((state, index) => {
           if (map.current.getLayer(stateAbbrvArray[index])) {
@@ -378,6 +485,30 @@ export default function App() {
             "county-points",
             "county-boundaries"
           );
+        });
+        mainEconomicDamageArray.map((state, index) => {
+          return map.current.on("mousemove", stateAbbrvArray[index], (e) => {
+            const features = map.current.queryRenderedFeatures(e.point);
+            let economicDamageData = finalData.map((element, index) => {
+              if (
+                features[0].properties.county_name === element.county &&
+                features[0].properties.state_abbrev === element.state
+              ) {
+                return element.data.economicDamage;
+              }
+            });
+
+            console.log(features);
+            if (features.length > 0) {
+              if (typeof features[0].properties.county_name !== "undefined") {
+                setHoverData({
+                  name: features[0].properties.county_name,
+                  state: features[0].properties.state_abbrev,
+                  heat: economicDamageData,
+                });
+              }
+            }
+          });
         });
         break;
     }
@@ -411,6 +542,15 @@ export default function App() {
           </div>
         </div>
       </div>
+      {hover ? (
+        <div className="hover-wrapper">
+          <h1>{hoverData.name + ", " + hoverData.state}</h1>
+          <h2>
+            {name} {hoverData.heat}
+          </h2>
+        </div>
+      ) : null}
+      ;
       <div ref={mapContainer} className="map-container" />
     </div>
   );

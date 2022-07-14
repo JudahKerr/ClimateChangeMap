@@ -117,3 +117,15 @@ code {
 .switch div:nth-child(7) {
   background-color: yellow;
 }
+
+.hover-wrapper {
+  position: absolute;
+  z-index: 2;
+  bottom: 400px;
+  left: 1800px;
+  width: 200px;
+  height: 400px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 4px;
+}

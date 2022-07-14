@@ -16041,7 +16041,7 @@ mainEconomicDamageArray.forEach((item) => {
 })
 
 
-export {mainHeatArray, mainWetBulbArray, mainCropYieldArray, mainSeaLevelRiseArray, mainFireArray, mainEconomicDamageArray};
+export {mainHeatArray, mainWetBulbArray, mainCropYieldArray, mainSeaLevelRiseArray, mainFireArray, mainEconomicDamageArray, finalData};
 
 // coloradoArray.push("transparent");
 
