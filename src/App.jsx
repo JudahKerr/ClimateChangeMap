@@ -21,6 +21,13 @@ export default function App() {
   const [zoom, setZoom] = useState(4.5);
   const [layer, setLayer] = useState(0);
   const [name, setName] = useState("Heat");
+  const [grow1, setGrow1] = useState(true);
+  const [grow2, setGrow2] = useState(false);
+  const [grow3, setGrow3] = useState(false);
+  const [grow4, setGrow4] = useState(false);
+  const [grow5, setGrow5] = useState(false);
+  const [grow6, setGrow6] = useState(false);
+
   const [hover, setHover] = useState(false);
   const [hoverData, setHoverData] = useState({
     name: "",
@@ -96,6 +103,7 @@ export default function App() {
     });
 
     map.current.on("load", () => {
+      
       mainHeatArray.map((state, index) => {
         return map.current.addLayer(
           {
@@ -130,7 +138,6 @@ export default function App() {
             }
           });
 
-          console.log(features);
           if (features.length > 0) {
             if (typeof features[0].properties.county_name !== "undefined") {
               setHoverData({
@@ -180,12 +187,8 @@ export default function App() {
 
         "state-points"
       );
-      map.current.addSource({
-        id: "cities",
-        type: "symbol",
-        source: "jkerr772.cl5fk7b3z1js520kt1vmo78qp-2pbtg",
-      });
     });
+   
   });
 
   useEffect(() => {
@@ -230,7 +233,6 @@ export default function App() {
               }
             });
 
-            console.log(features);
             if (features.length > 0) {
               if (typeof features[0].properties.county_name !== "undefined") {
                 setHoverData({
@@ -285,7 +287,6 @@ export default function App() {
               }
             });
 
-            console.log(features);
             if (features.length > 0) {
               if (typeof features[0].properties.county_name !== "undefined") {
                 setHoverData({
@@ -339,7 +340,6 @@ export default function App() {
               }
             });
 
-            console.log(features);
             if (features.length > 0) {
               if (typeof features[0].properties.county_name !== "undefined") {
                 setHoverData({
@@ -392,7 +392,6 @@ export default function App() {
               }
             });
 
-            console.log(features);
             if (features.length > 0) {
               if (typeof features[0].properties.county_name !== "undefined") {
                 setHoverData({
@@ -445,7 +444,6 @@ export default function App() {
               }
             });
 
-            console.log(features);
             if (features.length > 0) {
               if (typeof features[0].properties.county_name !== "undefined") {
                 setHoverData({
@@ -498,7 +496,6 @@ export default function App() {
               }
             });
 
-            console.log(features);
             if (features.length > 0) {
               if (typeof features[0].properties.county_name !== "undefined") {
                 setHoverData({
@@ -523,6 +520,73 @@ export default function App() {
     });
   });
 
+  function onClick1(e) {
+    setLayer(1);
+    if (grow2 || grow3 || grow4 || grow5 || grow6) {
+      setGrow1(true);
+      setGrow3(false);
+      setGrow4(false);
+      setGrow5(false);
+      setGrow6(false);
+      setGrow2(false);
+    }
+  }
+  function onClick2(e) {
+    setLayer(2);
+    if (grow1 || grow3 || grow4 || grow5 || grow6) {
+      setGrow1(false);
+      setGrow3(false);
+      setGrow4(false);
+      setGrow5(false);
+      setGrow6(false);
+      setGrow2(true);
+    }
+  }
+  function onClick3(e) {
+    setLayer(3);
+    if (grow1 || grow2 || grow4 || grow5 || grow6) {
+      setGrow1(false);
+      setGrow3(true);
+      setGrow4(false);
+      setGrow5(false);
+      setGrow6(false);
+      setGrow2(false);
+    }
+  }
+  function onClick4(e) {
+    setLayer(4);
+    if (grow1 || grow2 || grow3 || grow5 || grow6) {
+      setGrow1(false);
+      setGrow3(false);
+      setGrow4(true);
+      setGrow5(false);
+      setGrow6(false);
+      setGrow2(false);
+    }
+  }
+  function onClick5(e) {
+    setLayer(5);
+    if (grow1 || grow3 || grow4 || grow2 || grow6) {
+      setGrow1(false);
+      setGrow3(false);
+      setGrow4(false);
+      setGrow5(true);
+      setGrow6(false);
+      setGrow2(false);
+    }
+  }
+  function onClick6(e) {
+    setLayer(6);
+    if (grow1 || grow3 || grow4 || grow5 || grow2) {
+      setGrow1(false);
+      setGrow3(false);
+      setGrow4(false);
+      setGrow5(false);
+      setGrow6(true);
+      setGrow2(false);
+    }
+  }
+
   return (
     <div>
       <div className="sidebar">
@@ -533,15 +597,52 @@ export default function App() {
         <div className="layer-picker">
           <h2>Switch Datasets</h2>
           <div className="switch">
-            <div onClick={() => setLayer(1)}>Heat</div>
-            <div onClick={() => setLayer(2)}>Wet Bulb</div>
-            <div onClick={() => setLayer(3)}>Crop Yield</div>
-            <div onClick={() => setLayer(4)}>Sea Level Rise</div>
-            <div onClick={() => setLayer(5)}>Very Large Fires</div>
-            <div onClick={() => setLayer(6)}>Economic Damage</div>
+            <div
+              onClick={(e) => onClick1(e)}
+              className={grow1 ? "grow" : "shrink"}
+            >
+              Heat
+              {grow1 ? <p>Test</p> : null}
+            </div>
+            <div
+              onClick={(e) => onClick2(e)}
+              className={grow2 ? "grow" : "shrink"}
+            >
+              Wet Bulb
+              {grow2 ? <p>Test</p> : null}
+            </div>
+            <div
+              onClick={(e) => onClick3(e)}
+              className={grow3 ? "grow" : "shrink"}
+            >
+              Crop Yield Decline
+              {grow3 ? <p>Test</p> : null}
+            </div>
+            <div
+              onClick={(e) => onClick4(e)}
+              className={grow4 ? "grow" : "shrink"}
+            >
+              Sea Level Rise
+              {grow4 ? <p>Test</p> : null}
+            </div>
+            <div
+              onClick={(e) => onClick5(e)}
+              className={grow5 ? "grow" : "shrink"}
+            >
+              Very Large Fires
+              {grow5 ? <p>Test</p> : null}
+            </div>
+            <div
+              onClick={(e) => onClick6(e)}
+              className={grow6 ? "grow" : "shrink"}
+            >
+              Economic Damage
+              {grow6 ? <p>Test</p> : null}
+            </div>
           </div>
         </div>
       </div>
+      <div ref={mapContainer} className="map-container"></div>
       {hover ? (
         <div className="hover-wrapper">
           <h1>{hoverData.name + ", " + hoverData.state}</h1>
@@ -550,8 +651,7 @@ export default function App() {
           </h2>
         </div>
       ) : null}
-      ;
-      <div ref={mapContainer} className="map-container" />
+      
     </div>
   );
 }
