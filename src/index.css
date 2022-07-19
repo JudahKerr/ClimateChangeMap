@@ -57,12 +57,14 @@ body {
 .title-wrapper h3 {
   margin-top: 20px;
   padding: 0 20px;
-  text-align: center;
-  width: 80%;
+  text-align: left;
+  width: 100%;
 }
 
+
+
 .layer-picker {
-  margin-top: 90px;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -116,13 +118,47 @@ body {
 } */
 
 .switch div.grow {
-  background-color: #fff;
+  background-color: rgb(241, 241, 241);
 }
 
 .grow {
   flex-basis: 250px;
   padding-top: 10px;
   transition: all .3s ease;
+}
+
+.popup {
+  position: absolute;
+  z-index: 3;
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  top: 50%;
+  left: 700px;
+  bottom: 50%;
+  
+}
+
+.blur {
+filter: blur(2px);
+}
+
+.popup button {
+  width: 50%;
+  height: 60px;
+  border-radius: 10px;
+  background-color: rgb(185, 185, 185);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.popup img {
+  height: auto;
+  width: 15px;
 }
 
 
@@ -140,7 +176,12 @@ body {
   line-height: 1.5;
   font-weight: 500;
 }
-
+.hard-rule {
+  border-bottom: 0;
+  border-top: 4px dotted black;
+  margin-bottom: 10px;
+  width: 50%;
+}
 
 
 .hover-wrapper {
@@ -148,9 +189,18 @@ body {
   z-index: 3;
   bottom: 400px;
   left: 1700px;
-  width: 200px;
-  height: 400px;
+  width: 275px;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   border: 1px solid black;
   border-radius: 4px;
+}
+
+.icon {
+  height: auto;
+  width: 75px;
 }

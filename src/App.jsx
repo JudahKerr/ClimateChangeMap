@@ -27,6 +27,7 @@ export default function App() {
   const [grow4, setGrow4] = useState(false);
   const [grow5, setGrow5] = useState(false);
   const [grow6, setGrow6] = useState(false);
+  const [load, setLoad] = useState(true);
 
   const [hover, setHover] = useState(false);
   const [hoverData, setHoverData] = useState({
@@ -520,8 +521,24 @@ export default function App() {
     });
   });
 
+  let imgString = "https://cdn-icons-png.flaticon.com/512/2316/2316581.png";
+  if (layer === 1) {
+
+  } else if (layer === 2) {
+    imgString = "https://cdn-icons-png.flaticon.com/512/4888/4888486.png"
+  } else if (layer === 3) {
+   imgString = "https://cdn-icons.flaticon.com/png/512/1061/premium/1061825.png?token=exp=1658270032~hmac=b7e959d0e225e862ae07fadf21984b4f"
+  } else if (layer === 4) {
+    imgString = "https://cdn-icons.flaticon.com/png/512/3618/premium/3618822.png?token=exp=1658270069~hmac=5c4c5ad4c7935f843ded518a5a3056d5"
+  } else if (layer === 5) {
+   imgString = "https://cdn-icons-png.flaticon.com/512/2985/2985511.png"
+  } else if (layer === 6) {
+    imgString = "https://cdn-icons.flaticon.com/png/512/3642/premium/3642178.png?token=exp=1658270139~hmac=e5cc8df65cd78d256ff7f57b4a6db04a"
+  }
+
   function onClick1(e) {
     setLayer(1);
+   
     if (grow2 || grow3 || grow4 || grow5 || grow6) {
       setGrow1(true);
       setGrow3(false);
@@ -533,6 +550,7 @@ export default function App() {
   }
   function onClick2(e) {
     setLayer(2);
+    
     if (grow1 || grow3 || grow4 || grow5 || grow6) {
       setGrow1(false);
       setGrow3(false);
@@ -587,20 +605,32 @@ export default function App() {
     }
   }
 
+function handleClick() {
+  setLoad(false);
+}
+
+
   return (
     <div>
+    
+    
       <div className="sidebar">
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
       <div className="main-wrapper">
-        <div className="title-wrapper">
+        <div className={load ? "title-wrapper blur" : "title-wrapper"}>
           <h1>Climate Change Visualizer</h1>
-          <h3>Data ranges from <span className="">1</span> (lowest) to <span>10</span> (highest)</h3>
+          <h3>These numbers are modeled from the RCP 8.5 projections, for the years 2040-2060. Data ranges from <span className="spanClass">1</span> (lowest) to <span className="spanClass">10</span> (highest). <br></br><br></br> Source is from <a href="https://projects.propublica.org/climate-migration/">ProPublica</a> and the Rhodium Group.</h3>
+          
         </div>
-
-        <div className="layer-picker">
+        {load ? <div className="popup-wrapper"><div className="popup">
+      <h1>Click and Zoom for more detail! Hover over each county to get more information.</h1>
+      <button onClick={handleClick}>Okay!</button>
+      <p>Made with <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png"></img> by Judah Kerr</p>
+    </div></div> : null }
+        <div className={load ? "layer-picker blur" : "layer-picker"}>
           <h2>Switch Datasets</h2>
-          <hr></hr>
+          <hr className="hard-rule"></hr>
           <div className="switch">
             <div
               onClick={(e) => onClick1(e)}
@@ -628,31 +658,33 @@ export default function App() {
               className={grow4 ? "grow" : "shrink"}
             >
               Sea Level Rise
-              {grow4 ? <p>As sea levels rise, costal communites will be forced to leave</p> : null}
+              {grow4 ? <p>As sea levels rise, costal communites will be damaged and forced to either leave or invest heavily in counter measures. </p> : null}
             </div>
             <div
               onClick={(e) => onClick5(e)}
               className={grow5 ? "grow" : "shrink"}
             >
               Very Large Fires
-              {grow5 ? <p>Test</p> : null}
+              {grow5 ? <p>Average number of very large fires over 12,000 acres.</p> : null}
             </div>
             <div
               onClick={(e) => onClick6(e)}
               className={grow6 ? "grow" : "shrink"}
             >
               Economic Damage
-              {grow6 ? <p>Test</p> : null}
+              {grow6 ? <p>The financial toll all of these increases will have on each county, as a share of their GDP.</p> : null}
             </div>
           </div>
         </div>
+        
       </div>
-      <div ref={mapContainer} className="map-container"></div>
+      <div ref={mapContainer} className={load ? "map-container blur" : "map-container" }></div>
       {hover ? (
         <div className="hover-wrapper">
           <h1>{hoverData.name + ", " + hoverData.state}</h1>
+          <img src={imgString} className="icon"></img>
           <h2>
-            {name} {hoverData.heat}
+            {name}: {hoverData.heat}
           </h2>
         </div>
       ) : null}
