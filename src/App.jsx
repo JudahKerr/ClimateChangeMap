@@ -95,15 +95,16 @@ export default function App() {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/jkerr772/cl5fi0zwz000214p39rnnx0vt",
+      // "mapbox://styles/jkerr772/cl5fi0zwz000214p39rnnx0vt"
+      style: "mapbox://styles/jkerr772/cl5shmj1j000414mqdubrdpq8",
       center: [lng, lat],
       zoom: zoom,
-      minZoom: 4,
+      minZoom: 4.5,
       maxZoom: 9,
     });
 
     map.current.on("load", () => {
-      
+      map.current.setMaxBounds([[-48,-24],[38,15]])
       mainHeatArray.map((state, index) => {
         return map.current.addLayer(
           {
@@ -188,7 +189,6 @@ export default function App() {
         "state-points"
       );
     });
-   
   });
 
   useEffect(() => {
@@ -593,37 +593,42 @@ export default function App() {
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
       <div className="main-wrapper">
-        <h1>Climate Change Map</h1>
+        <div className="title-wrapper">
+          <h1>Climate Change Visualizer</h1>
+          <h3>Data ranges from <span className="">1</span> (lowest) to <span>10</span> (highest)</h3>
+        </div>
+
         <div className="layer-picker">
           <h2>Switch Datasets</h2>
+          <hr></hr>
           <div className="switch">
             <div
               onClick={(e) => onClick1(e)}
               className={grow1 ? "grow" : "shrink"}
             >
               Heat
-              {grow1 ? <p>Test</p> : null}
+              {grow1 ? <p>Increase in average temperature. Most of the South and South West becomes uninhabitable.</p> : null}
             </div>
             <div
               onClick={(e) => onClick2(e)}
               className={grow2 ? "grow" : "shrink"}
             >
               Wet Bulb
-              {grow2 ? <p>Test</p> : null}
+              {grow2 ? <p>Wet Bulb is the combination of excessive heat and humidity, where the human body is unable to cool itself. Increasing the risk of heat stroke and death.</p> : null}
             </div>
             <div
               onClick={(e) => onClick3(e)}
               className={grow3 ? "grow" : "shrink"}
             >
               Crop Yield Decline
-              {grow3 ? <p>Test</p> : null}
+              {grow3 ? <p>Rising temperatures will make it more difficult to grow food. Staple crops for livestock such as corn and soy will take a big hit, creating more food insecurity.</p> : null}
             </div>
             <div
               onClick={(e) => onClick4(e)}
               className={grow4 ? "grow" : "shrink"}
             >
               Sea Level Rise
-              {grow4 ? <p>Test</p> : null}
+              {grow4 ? <p>As sea levels rise, costal communites will be forced to leave</p> : null}
             </div>
             <div
               onClick={(e) => onClick5(e)}
@@ -651,7 +656,6 @@ export default function App() {
           </h2>
         </div>
       ) : null}
-      
     </div>
   );
 }
