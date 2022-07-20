@@ -41,7 +41,7 @@ body {
   border-radius: 5px;
   /* box-shadow: 0px 2px 8px 1px rgb(100, 100, 100); */
   width: 380px;
-  
+  box-shadow: 2px 0px 10px 3px rgb(59, 59, 59);
   height: auto;
 }
 
@@ -118,7 +118,7 @@ body {
 } */
 
 .switch div.grow {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(247, 246, 246);
 }
 
 .grow {
@@ -131,11 +131,12 @@ body {
   position: absolute;
   z-index: 3;
   width: 500px;
-  height: 400px;
+  height: 350px;
   border-radius: 10px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  
   padding: 20px 20px;
   top: 50%;
   left: 700px;
@@ -151,14 +152,19 @@ filter: blur(2px);
   width: 50%;
   height: 60px;
   border-radius: 10px;
-  background-color: rgb(185, 185, 185);
+  background-color: rgb(224, 224, 224);
   font-size: 1.8rem;
   cursor: pointer;
+}
+.popup h1 {
+  font-size: 1.6rem;
 }
 
 .popup img {
   height: auto;
   width: 15px;
+  position: relative;
+  top: 2px;
 }
 
 
@@ -189,18 +195,24 @@ filter: blur(2px);
   z-index: 3;
   bottom: 400px;
   left: 1700px;
-  width: 275px;
-  height: 275px;
+  width: 300px;
+  height: 300px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap; 
   justify-content: center;
   align-items: center;
   background-color: #fff;
   border: 1px solid black;
   border-radius: 4px;
+  box-shadow: 2px 0px 10px 3px rgb(59, 59, 59);
+}
+
+.hover-wrapper h2 {
+  font-size: 1.6rem;
 }
 
 .icon {
   height: auto;
-  width: 75px;
+  width: 100px;
 }

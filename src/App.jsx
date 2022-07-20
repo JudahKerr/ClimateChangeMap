@@ -11,7 +11,7 @@ import {
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 
-mapboxgl.accessToken = "pk.eyJ1IjoiamtlcnI3NzIiLCJhIjoiY2w1MDdzbXpjMGlhdzNkbzd6eDJiNjc2dyJ9.003msFKMkkkMv4tRl2AIYg";
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 export default function App() {
   const mapContainer = useRef(null);
@@ -521,19 +521,19 @@ export default function App() {
     });
   });
 
-  let imgString = "https://cdn-icons-png.flaticon.com/512/2316/2316581.png";
+  let imgString = "heat.png";
   if (layer === 1) {
 
   } else if (layer === 2) {
-    imgString = "https://cdn-icons-png.flaticon.com/512/4888/4888486.png"
+    imgString = "wetBulb.png"
   } else if (layer === 3) {
-   imgString = "https://cdn-icons.flaticon.com/png/512/1061/premium/1061825.png?token=exp=1658270032~hmac=b7e959d0e225e862ae07fadf21984b4f"
+   imgString = "crop.png"
   } else if (layer === 4) {
-    imgString = "https://cdn-icons.flaticon.com/png/512/3618/premium/3618822.png?token=exp=1658270069~hmac=5c4c5ad4c7935f843ded518a5a3056d5"
+    imgString = "seaLevel.png"
   } else if (layer === 5) {
-   imgString = "https://cdn-icons-png.flaticon.com/512/2985/2985511.png"
+   imgString = "fire.png"
   } else if (layer === 6) {
-    imgString = "https://cdn-icons.flaticon.com/png/512/3642/premium/3642178.png?token=exp=1658270139~hmac=e5cc8df65cd78d256ff7f57b4a6db04a"
+    imgString = "economic.png"
   }
 
   function onClick1(e) {
@@ -620,7 +620,7 @@ function handleClick() {
       <div className="main-wrapper">
         <div className={load ? "title-wrapper blur" : "title-wrapper"}>
           <h1>Climate Change Visualizer</h1>
-          <h3>These numbers are modeled from the RCP 8.5 projections, for the years 2040-2060. Data ranges from <span className="spanClass">1</span> (lowest) to <span className="spanClass">10</span> (highest). <br></br><br></br> Source is from <a href="https://projects.propublica.org/climate-migration/">ProPublica</a> and the Rhodium Group.</h3>
+          <h3>These numbers are modeled from the RCP 8.5 projections, for the years 2040-2060. Data ranges from <span className="spanClass">1</span> (lowest) to <span className="spanClass">10</span> (highest). <br></br><br></br> Source is from <a target="_blank" href="https://projects.propublica.org/climate-migration/">ProPublica</a> and the Rhodium Group.</h3>
           
         </div>
         {load ? <div className="popup-wrapper"><div className="popup">
@@ -682,7 +682,7 @@ function handleClick() {
       {hover ? (
         <div className="hover-wrapper">
           <h1>{hoverData.name + ", " + hoverData.state}</h1>
-          <img src={imgString} className="icon"></img>
+          <img src={imgString} className="icon" alt="datasetIcon"></img>
           <h2>
             {name}: {hoverData.heat}
           </h2>
