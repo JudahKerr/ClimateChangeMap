@@ -624,7 +624,7 @@ function handleClick() {
           
         </div>
         {load ? <div className="popup-wrapper"><div className="popup">
-      <h1>Click and Zoom for more detail! Hover over each county to get more information.</h1>
+      <h1>Click and drag to move and scroll in to zoom! Hover over each county to get more information.</h1>
       <button onClick={handleClick}>Okay!</button>
       <p>Made with <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png"></img> by Judah Kerr</p>
     </div></div> : null }
