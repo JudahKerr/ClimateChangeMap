@@ -105,7 +105,10 @@ export default function App() {
     });
 
     map.current.on("load", () => {
-      map.current.setMaxBounds([[-48,-24],[38,15]])
+      map.current.setMaxBounds([
+        [-48, -24],
+        [38, 15],
+      ]);
       mainHeatArray.map((state, index) => {
         return map.current.addLayer(
           {
@@ -523,22 +526,21 @@ export default function App() {
 
   let imgString = "heat.png";
   if (layer === 1) {
-
   } else if (layer === 2) {
-    imgString = "wetBulb.png"
+    imgString = "wetBulb.png";
   } else if (layer === 3) {
-   imgString = "crop.png"
+    imgString = "crop.png";
   } else if (layer === 4) {
-    imgString = "seaLevel.png"
+    imgString = "seaLevel.png";
   } else if (layer === 5) {
-   imgString = "fire.png"
+    imgString = "fire.png";
   } else if (layer === 6) {
-    imgString = "economic.png"
+    imgString = "economic.png";
   }
 
   function onClick1(e) {
     setLayer(1);
-   
+
     if (grow2 || grow3 || grow4 || grow5 || grow6) {
       setGrow1(true);
       setGrow3(false);
@@ -550,7 +552,7 @@ export default function App() {
   }
   function onClick2(e) {
     setLayer(2);
-    
+
     if (grow1 || grow3 || grow4 || grow5 || grow6) {
       setGrow1(false);
       setGrow3(false);
@@ -605,29 +607,49 @@ export default function App() {
     }
   }
 
-function handleClick() {
-  setLoad(false);
-}
-
+  function handleClick() {
+    setLoad(false);
+  }
 
   return (
-    <div>
-    
-    
+    <div className="main">
+      {load ? (
+        <div className="popup">
+          <h1>
+            Click and drag to move and scroll in to zoom! Hover over each county
+            to get more information.
+          </h1>
+          <button onClick={handleClick}>Okay!</button>
+          <p>
+            Made with{" "}
+            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png"></img>{" "}
+            by Judah Kerr
+          </p>
+        </div>
+      ) : null}
+
       <div className="sidebar">
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
       </div>
       <div className="main-wrapper">
         <div className={load ? "title-wrapper blur" : "title-wrapper"}>
           <h1>Climate Change Visualizer</h1>
-          <h3>These numbers are modeled from the RCP 8.5 projections, for the years 2040-2060. Data ranges from <span className="spanClass">1</span> (lowest) to <span className="spanClass">10</span> (highest). <br></br><br></br> Source is from <a target="_blank" href="https://projects.propublica.org/climate-migration/">ProPublica</a> and the Rhodium Group.</h3>
-          
+          <h3>
+            These numbers are modeled from the RCP 8.5 projections, for the
+            years 2040-2060. Data ranges from{" "}
+            <span className="spanClass">1</span> (lowest) to{" "}
+            <span className="spanClass">10</span> (highest). <br></br>
+            <br></br> Source is from{" "}
+            <a
+              target="_blank"
+              href="https://projects.propublica.org/climate-migration/"
+            >
+              ProPublica
+            </a>{" "}
+            and the Rhodium Group.
+          </h3>
         </div>
-        {load ? <div className="popup-wrapper"><div className="popup">
-      <h1>Click and drag to move and scroll in to zoom! Hover over each county to get more information.</h1>
-      <button onClick={handleClick}>Okay!</button>
-      <p>Made with <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png"></img> by Judah Kerr</p>
-    </div></div> : null }
+
         <div className={load ? "layer-picker blur" : "layer-picker"}>
           <h2>Switch Datasets</h2>
           <hr className="hard-rule"></hr>
@@ -637,48 +659,79 @@ function handleClick() {
               className={grow1 ? "grow" : "shrink"}
             >
               Heat
-              {grow1 ? <p>Increase in average temperature. Most of the South and South West becomes uninhabitable.</p> : null}
+              {grow1 ? (
+                <p>
+                  Increase in average temperature. Most of the South and South
+                  West becomes uninhabitable.
+                </p>
+              ) : null}
             </div>
             <div
               onClick={(e) => onClick2(e)}
               className={grow2 ? "grow" : "shrink"}
             >
               Wet Bulb
-              {grow2 ? <p>Wet Bulb is the combination of excessive heat and humidity, where the human body is unable to cool itself. Increasing the risk of heat stroke and death.</p> : null}
+              {grow2 ? (
+                <p>
+                  Wet Bulb is the combination of excessive heat and humidity,
+                  where the human body is unable to cool itself. Increasing the
+                  risk of heat stroke and death.
+                </p>
+              ) : null}
             </div>
             <div
               onClick={(e) => onClick3(e)}
               className={grow3 ? "grow" : "shrink"}
             >
               Crop Yield Decline
-              {grow3 ? <p>Rising temperatures will make it more difficult to grow food. Staple crops for livestock such as corn and soy will take a big hit, creating more food insecurity.</p> : null}
+              {grow3 ? (
+                <p>
+                  Rising temperatures will make it more difficult to grow food.
+                  Staple crops for livestock such as corn and soy will take a
+                  big hit, creating more food insecurity.
+                </p>
+              ) : null}
             </div>
             <div
               onClick={(e) => onClick4(e)}
               className={grow4 ? "grow" : "shrink"}
             >
               Sea Level Rise
-              {grow4 ? <p>As sea levels rise, costal communites will be damaged and forced to either leave or invest heavily in counter measures. </p> : null}
+              {grow4 ? (
+                <p>
+                  As sea levels rise, costal communites will be damaged and
+                  forced to either leave or invest heavily in counter measures.{" "}
+                </p>
+              ) : null}
             </div>
             <div
               onClick={(e) => onClick5(e)}
               className={grow5 ? "grow" : "shrink"}
             >
               Very Large Fires
-              {grow5 ? <p>Average number of very large fires over 12,000 acres.</p> : null}
+              {grow5 ? (
+                <p>Average number of very large fires over 12,000 acres.</p>
+              ) : null}
             </div>
             <div
               onClick={(e) => onClick6(e)}
               className={grow6 ? "grow" : "shrink"}
             >
               Economic Damage
-              {grow6 ? <p>The financial toll all of these increases will have on each county, as a share of their GDP.</p> : null}
+              {grow6 ? (
+                <p>
+                  The financial toll all of these increases will have on each
+                  county, as a share of their GDP.
+                </p>
+              ) : null}
             </div>
           </div>
         </div>
-        
       </div>
-      <div ref={mapContainer} className={load ? "map-container blur" : "map-container" }></div>
+      <div
+        ref={mapContainer}
+        className={load ? "map-container blur" : "map-container"}
+      ></div>
       {hover ? (
         <div className="hover-wrapper">
           <h1>{hoverData.name + ", " + hoverData.state}</h1>
